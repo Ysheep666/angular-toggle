@@ -1,10 +1,7 @@
-#anuglar open toggle
+# anuglar open toggle
 
+## **Install**
 
-----------
-
-
-##**Install**
-
-
-    bower install angular-open-toggle
+```
+bower install angular-open-toggle
+```
