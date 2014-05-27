@@ -1,3 +1,4 @@
+// 用于实现 popover 和 dropdown 等效果
 angular.module('directive.open_toggle', []).directive('openToggle', function($document) {
   var openAttrs, _close;
   openAttrs = null;
