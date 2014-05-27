@@ -1,0 +1,24 @@
+{
+  "name": "angular-open-toggle",
+  "version": "0.0.1",
+  "authors": [
+    "不会飞的羊<774070635@qq.com>"
+  ],
+  "main": "./open_toggle.js",
+  "keywords": [
+    "angular",
+    "toggle"
+  ],
+  "license": "MIT",
+  "homepage": "sadne.me",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "~1.2.16"
+  }
+}
