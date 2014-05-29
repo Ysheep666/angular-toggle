@@ -1,4 +1,4 @@
-angular.module('angular-open-toggle', []).directive('openToggle', function($document) {
+angular.module('ngOpenToggle', []).directive('openToggle', function($document, $animate) {
   var openAttrs, _close;
   openAttrs = null;
   _close = angular.noop;
@@ -9,13 +9,18 @@ angular.module('angular-open-toggle', []).directive('openToggle', function($docu
     },
     link: function(scope, element, attrs) {
       attrs.$observe('openToggle', function(status) {
+        var toggleElement, togglePopupElement;
+        toggleElement = element.closest('.toggle');
+        togglePopupElement = toggleElement.find('.toggle-popup');
         if (!status || status === 'false') {
-          element.closest('.toggle').removeClass('open');
+          toggleElement.removeClass('open');
+          $animate.removeClass(togglePopupElement, 'open');
           openAttrs = null;
           $document.unbind('mousedown keydown', _close);
           return _close = angular.noop;
         } else {
-          element.closest('.toggle').addClass('open');
+          toggleElement.addClass('open');
+          $animate.addClass(togglePopupElement, 'open');
           openAttrs = attrs;
           _close = function(event) {
             if (event.type === 'mousedown' || (event.type === 'keydown' && event.keyCode === 27)) {

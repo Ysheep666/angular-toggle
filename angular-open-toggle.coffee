@@ -1,7 +1,7 @@
 # 用于实现 popover 和 dropdown 等效果
-angular.module 'angular-open-toggle', [
+angular.module 'ngOpenToggle', [
 ]
-.directive 'openToggle', ($document) ->
+.directive 'openToggle', ($document, $animate) ->
   openAttrs = null
   _close = angular.noop
   {
@@ -10,14 +10,18 @@ angular.module 'angular-open-toggle', [
       openToggle: '@'
     link: (scope, element, attrs) ->
       attrs.$observe 'openToggle', (status) ->
+        toggleElement = element.closest('.toggle')
+        togglePopupElement = toggleElement.find '.toggle-popup'
         if !status or status is 'false'
-          element.closest('.toggle').removeClass 'open'
+          toggleElement.removeClass 'open'
+          $animate.removeClass togglePopupElement, 'open'
 
           openAttrs = null
           $document.unbind 'mousedown keydown', _close
           _close = angular.noop
         else
-          element.closest('.toggle').addClass 'open'
+          toggleElement.addClass 'open'
+          $animate.addClass togglePopupElement, 'open'
 
           openAttrs = attrs
           _close = (event) ->
