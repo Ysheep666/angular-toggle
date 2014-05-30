@@ -26,8 +26,6 @@ angular.module 'ngOpenToggle', [
           openAttrs = attrs
           _close = (event) ->
             if event.type is 'mousedown' or (event.type is 'keydown' and event.keyCode is 27)
-              event.preventDefault()
-              event.stopPropagation()
               openAttrs.$set 'openToggle', false
 
           $document.bind 'mousedown keydown', _close

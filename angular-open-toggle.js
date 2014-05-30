@@ -24,8 +24,6 @@ angular.module('ngOpenToggle', []).directive('openToggle', function($document, $
           openAttrs = attrs;
           _close = function(event) {
             if (event.type === 'mousedown' || (event.type === 'keydown' && event.keyCode === 27)) {
-              event.preventDefault();
-              event.stopPropagation();
               return openAttrs.$set('openToggle', false);
             }
           };
