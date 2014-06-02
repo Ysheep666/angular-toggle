@@ -1,9 +1,14 @@
 # 用于实现 popover 和 dropdown 等效果
 angular.module 'ngToggle', [
 ]
-.directive 'toggle', ($document, $animate) ->
+.directive 'toggle', ($rootScope, $document, $animate) ->
   _element = null
   _close = angular.noop
+
+  $rootScope.$on '$locationChangeStart', ->
+    if _element
+      _element.trigger 'click'
+
   {
     restrict: 'A'
     link: (scope, element, attrs) ->

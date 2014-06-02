@@ -1,7 +1,12 @@
-angular.module('ngToggle', []).directive('toggle', function($document, $animate) {
+angular.module('ngToggle', []).directive('toggle', function($rootScope, $document, $animate) {
   var _close, _element;
   _element = null;
   _close = angular.noop;
+  $rootScope.$on('$locationChangeStart', function() {
+    if (_element) {
+      return _element.trigger('click');
+    }
+  });
   return {
     restrict: 'A',
     link: function(scope, element, attrs) {
