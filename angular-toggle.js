@@ -5,14 +5,16 @@ angular.module('ngToggle', []).directive('toggle', function($document, $animate)
   return {
     restrict: 'A',
     link: function(scope, element, attrs) {
-      element.closest('.toggle').bind('mousedown keydown', function(event) {
-        if (event.type === 'mousedown' || (event.type === 'keydown' && event.keyCode === 27)) {
+      var toggleElement;
+      toggleElement = element.closest('.toggle');
+      toggleElement.bind('mousedown keydown', function(event) {
+        if (toggleElement.hasClass('open') && (event.type === 'mousedown' || (event.type === 'keydown' && event.keyCode === 27))) {
           event.preventDefault();
           return event.stopPropagation();
         }
       });
       return element.bind('click', function(event) {
-        var elementWasOpen, toggleElement, togglePopupElement;
+        var elementWasOpen, togglePopupElement;
         event.preventDefault();
         event.stopPropagation();
         elementWasOpen = element === _element;

@@ -7,8 +7,9 @@ angular.module 'ngToggle', [
   {
     restrict: 'A'
     link: (scope, element, attrs) ->
-      element.closest('.toggle').bind 'mousedown keydown', (event) ->
-        if event.type is 'mousedown' or (event.type is 'keydown' and event.keyCode is 27)
+      toggleElement = element.closest '.toggle'
+      toggleElement.bind 'mousedown keydown', (event) ->
+        if toggleElement.hasClass('open') and (event.type is 'mousedown' or (event.type is 'keydown' and event.keyCode is 27))
           event.preventDefault()
           event.stopPropagation()
 
