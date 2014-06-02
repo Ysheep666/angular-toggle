@@ -1,10 +1,10 @@
 {
-  "name": "angular-open-toggle",
+  "name": "angular-toggle",
   "version": "0.0.1",
   "authors": [
     "不会飞的羊<774070635@qq.com>"
   ],
-  "main": "./open_toggle.js",
+  "main": "./angular-toggle.js",
   "keywords": [
     "angular",
     "toggle"
