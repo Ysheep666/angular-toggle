@@ -1,0 +1,24 @@
+{
+  "name": "angular-toggle",
+  "version": "0.1.0",
+  "main": "angular-toggle.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sadne/angular-toggle.git"
+  },
+  "authors": [
+    "不会飞的羊<774070635@qq.com>"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sadne/angular-toggle/issues"
+  },
+  "homepage": "https://github.com/sadne/angular-toggle",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "time-grunt": "^0.4.0",
+    "load-grunt-tasks": "^0.6.0",
+    "grunt-ngmin": "0.0.3",
+    "grunt-contrib-coffee": "^0.10.1"
+  }
+}
